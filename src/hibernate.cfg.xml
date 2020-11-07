@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Database connection settings -->
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">org.h2.Driver</property>
+    <property name="connection.url">jdbc:h2:~/db-ztm.h2</property>
+    <property name="connection.username">admin</property>
+    <property name="connection.password">admin</property>
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">1</property>
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+    <!-- Disable the second-level cache -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+    <!-- Drop and re-create the database schema on startup -->
+<!--<property name="hbm2ddl.auto">create</property>-->
+    <!-- Enable Hibernate stats in the logs -->
+    <property name="hibernate.generate_statistics">true</property>
+
+    <mapping class="Models.Trasa"/>
+    <mapping class="Models.PojazdNaTrasie"/>
+    <mapping class="Models.Przystanek"/>
+    <mapping class="Models.Kierowca"/>
+    <mapping class="Models.Pojazd"/>
+    <mapping class="Models.Lokalizacja"/>
+    <mapping class="Models.Metro"/>
+    <mapping class="Models.Autobus"/>
+    <mapping class="Models.Bilet"/>
+    <mapping class="Models.NaprawaPojazdu"/>
+    <mapping class="Models.Osoba"/>
+    <mapping class="Models.Pasazer"/>
+    <mapping class="Models.Pracownik"/>
+    <mapping class="Models.Przystanek"/>
+    <mapping class="Models.PrzystanekNaTrasie"/>
+    <mapping class="Models.Serwisant"/>
+    <mapping class="Models.Tramwaj"/>
+
+
+  </session-factory>
+</hibernate-configuration>
